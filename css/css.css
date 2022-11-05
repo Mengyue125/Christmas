@@ -1,0 +1,139 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	width: 100vw;
+	height: 100vh;
+	background: url("../image/pexels-photo-257909.jpeg") no-repeat center;
+	background-size: cover;
+	overflow: hidden;
+}
+
+#loading{
+	width: 100vw;
+	height: 100vh;
+	background:  linear-gradient(220.55deg, #FF896D 0%, #D02020 100%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.old_human{
+	width: 300px;
+	animation: dh 3s ease both;
+	transform-origin: bottom;
+	cursor: pointer;
+	position: absolute;
+}
+
+@keyframes dh{
+	0%{
+		opacity: 0;
+		transform: scale(0) rotate(720deg) translateX(200px);
+	}
+	
+	100%{
+		opacity: 1;
+		transform: scale(1) rotate(0deg) translateX(0px);
+	}
+}
+
+@keyframes shake{
+	0%{
+		transform: translateY(0px) rotate(0deg)
+	}
+	
+	20%{
+		transform: translateY(-20px) rotate(-10deg)
+	}
+	
+	40%{
+		transform: translateY(-20px) rotate(10deg)
+	}
+	
+	60%{
+		transform: translateY(-20px) rotate(-10deg)
+	}
+	
+	80%{
+		transform: translateY(-20px) rotate(10deg)
+	}
+	
+	100%{
+		transform: translateY(0px) rotate(0deg)
+	}
+}
+
+
+#main{
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.5s;
+	transform: rotateZ(30deg);
+}
+
+@keyframes book{
+	0%{
+		opacity: 0;
+		transform: translateY(-1000px)
+	}
+	100%{
+		opacity: 1;
+		transform: translateY(0px)
+	}
+}
+
+#book{
+	width: 350px;
+	height: 450px;
+	background: white;
+	border: 10px solid rgba(187,37,39,1.00);
+	transform: perspective(2000px);
+	transform-style: preserve-3d;
+	transition: 1s;
+	cursor: pointer;
+	animation: book 1.25s ease-in;
+}
+
+#bk{
+	border: 10px solid rgba(187,37,39,1.00);
+	width: 350px;
+	height: 450px;
+	position: absolute;
+	transition: 1s;
+	transform-origin: left;
+	background: #c72320 url("../image/40d303b6b5d6d3eb30c6a97a44554704.jpeg") no-repeat center;
+	background-size: cover;
+	transform-style: preserve-3d;
+	transform: perspective(1500px);
+	cursor: pointer;
+	animation: book 1.25s ease-in;
+}
+
+
+/*
+#bk:hover{
+	transform: rotateY(-180deg);
+}
+*/
+
+
+#main span:nth-child(1){
+	font-size: 32px;
+	text-align: center;
+	display: block;
+	margin-top: 10px;
+	line-height: 80px;
+}
+
+#main span svg{
+	width: 350px;
+	margin-top: -190px;
+}
