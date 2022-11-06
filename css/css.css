@@ -13,6 +13,8 @@ body{
 	overflow: hidden;
 }
 
+li{list-style: none}
+
 #loading{
 	width: 100vw;
 	height: 100vh;
@@ -117,14 +119,6 @@ body{
 	animation: book 1.25s ease-in;
 }
 
-
-/*
-#bk:hover{
-	transform: rotateY(-180deg);
-}
-*/
-
-
 #main span:nth-child(1){
 	font-size: 32px;
 	text-align: center;
@@ -136,4 +130,196 @@ body{
 #main span svg{
 	width: 350px;
 	margin-top: -190px;
+}
+
+
+/*倒计时*/
+.time{
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+.time_box{
+	width: 700px;
+	height: 50%;
+}
+
+.time_box>h1{
+	font-size: 3em;
+	text-align: center;
+	color: #eee;
+	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif"
+}
+
+.remainTime{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	color: white;
+	margin-top: 20px;
+}
+
+.remainTime>li{
+	text-align: center;
+	width: 60px;
+	padding: 50px 20px;
+	background: rgba(215,93,65,0.8);
+	border-radius: 10px;
+	box-shadow: 5px 5px 5px rgba(0,0,0,0.4);
+	transition: 0.5s ease;
+}
+
+.remainTime>li:hover{
+	transform: scale(1.2)
+}
+
+.remainTime>li>h2{
+	font-size: 2.5em;
+	margin-bottom: 20px;
+}
+
+.Gifts{
+	left: -500px;
+	position: absolute;
+	animation: gifts 3s ease both paused;
+	top: 0;
+	transform: rotate(45deg);
+}
+
+.blessing{
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	font-size: 2em;
+}
+
+.blessing h1{
+	animation: scale 4s ease both;
+	position: absolute;
+	opacity: 0;
+}
+
+.blessing h1:nth-of-type(1){
+	animation-delay: 1s
+}
+
+.blessing h1:nth-of-type(2){
+	animation-delay: 4.5s
+}
+
+.blessing h1:nth-of-type(3){
+	animation-delay: 7.5s
+}
+
+body>p{
+	position: fixed;
+	font-size: 3em;
+	left: 50%;
+	top: 50%;
+	transform: translate(120%,250%);
+	color: red;
+	display: none;
+	cursor: pointer;
+}
+
+@keyframes scale{
+	0%{
+		opacity: 0;
+	}
+	20%{
+		opacity: 1;
+	}
+	80%{
+		transform: scale(1.5);
+	}
+	100%{
+		transform: scale(1.5);
+		opacity: 0;
+	}
+}
+
+@keyframes gifts{
+	100%{
+		left: 50%;
+		top: 60%;
+		transform: rotate(0deg);
+	}
+}
+
+.Gifts img{
+	width: 500px;
+}
+
+@media (max-width:480px){
+	.old_human{
+		width: 150px;
+	}
+	.time_box{
+		width: 350px;
+		height: 50%;
+	}
+
+	.time_box>h1{
+		font-size: 1.5em;
+	}
+	.remainTime>li{
+		text-align: center;
+		width: 60px;
+		padding: 50px 10px;
+		background: rgba(215,93,65,0.8);
+		border-radius: 10px;
+		box-shadow: 5px 5px 5px rgba(0,0,0,0.4);
+		transition: 0.5s ease;
+	}
+	.remainTime>li>h2{
+		font-size: 1.5em;
+		margin-bottom: 20px;
+	}
+	
+	@keyframes gift{
+		100%{
+			left: 25%;
+			top: 60%;
+			transform: rotate(0deg);
+		}
+	}
+	
+	.Gifts{
+		left: -500px;
+		position: absolute;
+		animation: gift 3s ease both paused;
+		top: 0;
+		transform: rotate(45deg);
+	}
+	.Gifts img{
+		width: 300px;
+	}
+	#book{
+		width: 200px;
+		height: 250px;
+	}
+
+	#bk{
+		width: 200px;
+		height: 250px;
+	}
+
+	#main span:nth-child(1){
+		font-size: 16px;
+		line-height: 40px;
+		margin: 10px;
+	}
+
+	#main span svg{
+		width: 180px;
+		margin-top: -230px;
+		margin-left: 10px;
+	}
 }
