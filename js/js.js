@@ -24,7 +24,7 @@ $(function(){
 	function time(){
 		//获取当前时间  
         var date = new Date();  
-        var date_next = new Date(2022,10,6,11);
+        var date_next = new Date(2022,12,25,0,0,0);
 		var temp=(date_next-date)/1000;
 		var day = parseInt(temp/60/60/24);
 		var hours = parseInt(temp/60/60%24);
@@ -60,4 +60,5 @@ $(function(){
 			$(".time").fadeIn();
 		});
 	})
+	
 })
