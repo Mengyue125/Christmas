@@ -218,7 +218,7 @@ li{list-style: none}
 	animation-delay: 7.5s
 }
 
-.go{
+body>p{
 	position: fixed;
 	font-size: 3em;
 	left: 50%;
@@ -265,7 +265,6 @@ li{list-style: none}
 		width: 350px;
 		height: 50%;
 	}
-
 	.time_box>h1{
 		font-size: 1.5em;
 	}
@@ -321,5 +320,13 @@ li{list-style: none}
 		width: 180px;
 		margin-top: -230px;
 		margin-left: 10px;
+	}
+	
+	.blessing{
+		font-size: 0.5em;
+	}
+	
+	.go{
+		font-size: 1.7em;
 	}
 }
