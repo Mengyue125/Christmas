@@ -6,6 +6,7 @@ $(function(){
 	},3000)
 	
 	$(".old_human").click(function(){
+		$("audio")[0].play();
 		$(".old_human").eq(0).animate({
 			top:-300
 		},function(){
@@ -18,13 +19,14 @@ $(function(){
 	})
 	$("#main").hide();
 	$(".time").hide();
+//	$(".name").hide();
 	$(".blessing").hide();
 	
 	
 	function time(){
 		//获取当前时间  
         var date = new Date();  
-        var date_next = new Date(2022,10,6,22,2,0);
+        var date_next = new Date(2022,11,12,14,33);
 		var temp=(date_next-date)/1000;
 		var day = parseInt(temp/60/60/24);
 		var hours = parseInt(temp/60/60%24);
@@ -44,11 +46,27 @@ $(function(){
 					left:'100%'
 				},"slow",function(){
 					$(".time").hide();
-					$(".blessing").show();
+					$(".name").show();
+					$(".name").animate({
+						left:"0%"
+					})
 				})
 			},4000)
 		}
 	}
+	
+	$(".name>button").click(function(){
+		$(".blessing").show();
+		$(".name").fadeOut();
+		if($(".name>input").val() == "肖依羡"){
+			$(".blessing>h1").eq(1).html($(".name>input").val() + "好好好，你以为会给你准备特别惊喜吗");
+			$(".blessing>h1").eq(2).html("那是美女才有的特权！");
+			$(".blessing>h1").eq(3).html("美女肖依羡圣诞快乐！");
+		}else{
+			$(".blessing>h1").eq(0).html($(".name>input").val() + "圣诞节快乐呀！");
+		}
+	})
+	
 	time();
 	var timer = setInterval(function(){
 		time()
@@ -136,7 +154,3 @@ $(function(){
 		snowflake();
 	}
 })
-
-window.onload = function(){
-	
-}
