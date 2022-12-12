@@ -59,7 +59,7 @@ $(function(){
 		$(".blessing").show();
 		$(".name").fadeOut();
 		if($(".name>input").val() == "肖依羡"){
-			$(".blessing>h1").eq(1).html($(".name>input").val() + "好好好，你以为会给你准备特别惊喜吗");
+			$(".blessing>h1").eq(1).html("好好好，你以为会给你准备特别惊喜吗");
 			$(".blessing>h1").eq(2).html("那是美女才有的特权！");
 			$(".blessing>h1").eq(3).html("美女肖依羡圣诞快乐！");
 		}else{
