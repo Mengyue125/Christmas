@@ -23,20 +23,27 @@ $(function(){
 	$(".blessing").hide();
 	
 	
+	var numTime = 10;
 	function time(){
 		//获取当前时间  
-        var date = new Date();  
-        var date_next = new Date(2022,11,23,0,20);
-		var temp=(date_next-date)/1000;
-		var day = parseInt(temp/60/60/24);
-		var hours = parseInt(temp/60/60%24);
-		var minutes = parseInt(temp/60%60);
-		var seconds = parseInt(temp%60);
-		$(".day").html(day)
-		$(".hours").html(hours)
-		$(".minutes").html(minutes)
-		$(".seconds").html(seconds)
-		if(day == 0 && hours == 0 && minutes == 0 & seconds == 0){
+//      var date = new Date();  
+//      var date_next = new Date(2022,11,12,15,10,50);
+//		var temp=(date_next-date)/1000;
+//		var day = parseInt(temp/60/60/24);
+//		var hours = parseInt(temp/60/60%24);
+//		var minutes = parseInt(temp/60%60);
+//		var seconds = parseInt(temp%60);
+//		$(".day").html(day)
+//		$(".hours").html(hours)
+//		$(".minutes").html(minutes)
+//		$(".seconds").html(seconds)
+		$(".day").html("0")
+		$(".hours").html("0")
+		$(".minutes").html("0")
+		numTime--
+		$(".seconds").html(numTime)
+		
+		if(numTime == 0){
 			$(".Gifts").css({
 				animationPlayState: 'running'
 			})
@@ -58,22 +65,16 @@ $(function(){
 	$(".name>button").click(function(){
 		$(".blessing").show();
 		$(".name").fadeOut();
-		if($(".name>input").val() == "肖依羡"){
-			$(".blessing>h1").eq(1).html("好好好，你以为会给你准备特别惊喜吗");
-			$(".blessing>h1").eq(2).html("那是美女才有的特权！");
-			$(".blessing>h1").eq(3).html("美女肖依羡圣诞快乐！");
-		}else{
-			$(".blessing>h1").eq(0).html($(".name>input").val() + "圣诞节快乐呀！");
-		}
+		$(".blessing>h1").eq(0).html($(".name>input").val() + "圣诞节快乐呀！");
 	})
 	
-	time();
-	var timer = setInterval(function(){
-		time()
-	},1000)
 	
+	var time;
 	$(".go").click(function(){
 		$(this).hide();
+		timer = setInterval(function(){
+			time()
+		},1000)
 		$("#main").fadeOut(700,function(){
 			$(".time").fadeIn();
 		});
